@@ -64,7 +64,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173", # local frontend
-    "https://learning-project-inky-tau.vercel.app/", # production fronte
+    "https://learning-project-inky-tau.vercel.app", # production fronte
 ]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
