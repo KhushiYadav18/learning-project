@@ -47,7 +47,7 @@ export default function Register() {
   };
 
   const ageGroupOptions = [
-    { value: "", label: "Select Age Group" },
+    { value: "", label: "Select your age group" },
     { value: "under_18", label: "Under 18" },
     { value: "18_25", label: "18-25" },
     { value: "26_35", label: "26-35" },
@@ -57,12 +57,12 @@ export default function Register() {
   
 
   const fields = [
-    { name: "username", type: "text", placeholder: "Username", onChange: handleChange },
-    { name: "email", type: "email", placeholder: "Email", onChange: handleChange },
-    { name: "phone_number", type: "tel", placeholder: "Phone Number", onChange: handleChange },
-    { name: "age_group", type: "select", placeholder: "Select Age Group", onChange: handleChange, options: ageGroupOptions },
-    { name: "password", type: "password", placeholder: "Password", onChange: handleChange }
+    { name: "username", type: "text", placeholder: "Choose a username", onChange: handleChange },
+    { name: "email", type: "email", placeholder: "Enter your email address", onChange: handleChange },
+    { name: "phone_number", type: "tel", placeholder: "Enter your phone number", onChange: handleChange },
+    { name: "age_group", type: "select", placeholder: "Select your age group", onChange: handleChange, options: ageGroupOptions },
+    { name: "password", type: "password", placeholder: "Create a strong password", onChange: handleChange }
   ];
 
-  return <AuthForm title="Sign Up" fields={fields} onSubmit={handleSubmit} />;
+  return <AuthForm title="Join the Revolution" fields={fields} onSubmit={handleSubmit} />;
 }

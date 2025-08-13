@@ -1,19 +1,21 @@
-/* Custom scrollbar */
+/* Dark Mode Theme - Modern Learning Platform */
+
+/* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+  background: linear-gradient(to bottom, #4f46e5, #7c3aed);
 }
 
 /* Smooth scrolling */
@@ -63,6 +65,15 @@ html {
   }
 }
 
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+  }
+}
+
 /* Utility classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
@@ -76,16 +87,33 @@ html {
   animation: slideInRight 0.6s ease-out;
 }
 
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+/* Dark theme glass morphism effect */
+.glass-dark {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.9);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+/* Gradient text for dark theme */
+.gradient-text-dark {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -100,36 +128,66 @@ html {
   transform: translateY(-4px);
 }
 
-/* Custom button styles */
-.btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300;
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
 }
 
-.btn-secondary {
-  @apply bg-white text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-xl font-medium hover:bg-blue-50 transition-all duration-200;
+/* Custom button styles for dark theme */
+.btn-primary-dark {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-indigo-500/30 hover:from-indigo-500 hover:to-purple-500;
 }
 
-/* Card styles */
-.card {
-  @apply bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden;
+.btn-secondary-dark {
+  @apply bg-gray-800 text-indigo-400 border-2 border-indigo-500 px-6 py-3 rounded-xl font-medium hover:bg-gray-700 hover:border-indigo-400 transition-all duration-200;
 }
 
-.card-hover {
-  @apply hover:shadow-xl transition-all duration-200;
+.btn-accent-dark {
+  @apply bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-pink-500/30 hover:from-pink-600 hover:to-purple-700;
 }
 
-/* Input styles */
-.input-field {
-  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-200 bg-white/80 backdrop-blur-sm;
+/* Card styles for dark theme */
+.card-dark {
+  @apply bg-gray-900/80 rounded-2xl shadow-2xl border border-gray-800/50 overflow-hidden backdrop-blur-sm;
 }
 
-/* Progress bar */
-.progress-bar {
-  @apply w-full h-3 bg-gray-200 rounded-full overflow-hidden;
+.card-hover-dark {
+  @apply hover:shadow-2xl hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-1;
 }
 
-.progress-fill {
-  @apply h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300;
+/* Input styles for dark theme */
+.input-field-dark {
+  @apply w-full px-4 py-3 border-2 border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 transition-all duration-200 bg-gray-800/80 backdrop-blur-sm text-white placeholder-gray-400;
+}
+
+/* Progress bar for dark theme */
+.progress-bar-dark {
+  @apply w-full h-3 bg-gray-700 rounded-full overflow-hidden;
+}
+
+.progress-fill-dark {
+  @apply h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-300;
+}
+
+/* Dark theme specific utilities */
+.bg-dark-primary {
+  background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+}
+
+.bg-dark-secondary {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+.bg-dark-accent {
+  background: linear-gradient(135deg, #16213e, #0f3460, #533483);
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
 }
 
 /* Responsive utilities */
@@ -149,4 +207,34 @@ html {
   .container-padding {
     @apply px-8;
   }
+}
+
+/* Dark theme text colors */
+.text-dark-primary {
+  @apply text-gray-100;
+}
+
+.text-dark-secondary {
+  @apply text-gray-300;
+}
+
+.text-dark-muted {
+  @apply text-gray-400;
+}
+
+.text-dark-accent {
+  @apply text-indigo-400;
+}
+
+/* Dark theme border colors */
+.border-dark-primary {
+  @apply border-gray-800;
+}
+
+.border-dark-secondary {
+  @apply border-gray-700;
+}
+
+.border-dark-accent {
+  @apply border-indigo-500;
 }

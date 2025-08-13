@@ -38,7 +38,7 @@ export default function VideoPlayer() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-dark-primary">
       <NavBar />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -51,7 +51,7 @@ export default function VideoPlayer() {
             transition={{ duration: 0.6 }}
           >
             {/* Video Player */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-6">
+            <div className="card-dark overflow-hidden mb-6">
               <div className="relative">
                 <video
                   src="https://www.w3schools.com/html/mov_bbb.mp4"
@@ -86,58 +86,58 @@ export default function VideoPlayer() {
             </div>
 
             {/* Video Info */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-6">
-              <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            <div className="card-dark p-6 mb-6">
+              <h1 className="text-2xl font-bold text-gray-100 mb-4">
                 JavaScript Fundamentals: Complete Beginner's Guide
               </h1>
               
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-4 text-sm text-gray-600">
+                <div className="flex items-center space-x-4 text-sm text-gray-400">
                   <span>👁️ 12.5K views</span>
                   <span>📅 2 days ago</span>
                   <span>⭐ 4.8 (245 reviews)</span>
                 </div>
                 
                 <div className="flex space-x-2">
-                  <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
+                  <button className="px-4 py-2 bg-indigo-900/50 text-indigo-300 rounded-lg hover:bg-indigo-800/50 transition-colors border border-indigo-500/30">
                     👍 Like
                   </button>
-                  <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                  <button className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700/50 transition-colors border border-gray-700/50">
                     💾 Save
                   </button>
-                  <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                  <button className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700/50 transition-colors border border-gray-700/50">
                     📤 Share
                   </button>
                 </div>
               </div>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Master the fundamentals of JavaScript programming with this comprehensive guide. 
                 Learn variables, functions, objects, and more through practical examples and hands-on exercises.
               </p>
             </div>
 
             {/* Video Chapters */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">Chapters</h2>
+            <div className="card-dark p-6">
+              <h2 className="text-xl font-bold text-gray-100 mb-4">Learning Chapters</h2>
               
               <div className="space-y-3">
                 {videoChapters.map((chapter, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+                    className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors cursor-pointer border border-gray-700/50"
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                      <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         {index + 1}
                       </div>
                       <div>
-                        <h3 className="font-medium text-gray-800">{chapter.title}</h3>
-                        <p className="text-sm text-gray-600">{chapter.time} - {chapter.duration}</p>
+                        <h3 className="font-medium text-gray-100">{chapter.title}</h3>
+                        <p className="text-sm text-gray-400">{chapter.time} - {chapter.duration}</p>
                       </div>
                     </div>
-                    <button className="text-blue-600 hover:text-blue-700">
+                    <button className="text-indigo-400 hover:text-indigo-300">
                       ▶️
                     </button>
                   </motion.div>
@@ -153,17 +153,17 @@ export default function VideoPlayer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Course Progress */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-6">
-              <h2 className="text-lg font-bold text-gray-800 mb-4">Course Progress</h2>
+            <div className="card-dark p-6 mb-6">
+              <h2 className="text-lg font-bold text-gray-100 mb-4">Learning Progress</h2>
               
               <div className="mb-4">
-                <div className="flex justify-between text-sm text-gray-600 mb-2">
+                <div className="flex justify-between text-sm text-gray-400 mb-2">
                   <span>Overall Progress</span>
                   <span>65%</span>
                 </div>
-                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div className="progress-bar-dark">
                   <div 
-                    className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300"
+                    className="progress-fill-dark"
                     style={{ width: "65%" }}
                   />
                 </div>
@@ -171,37 +171,37 @@ export default function VideoPlayer() {
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Videos Completed</span>
-                  <span className="font-medium text-gray-800">13/20</span>
+                  <span className="text-gray-400">Videos Completed</span>
+                  <span className="font-medium text-gray-200">13/20</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Quizzes Passed</span>
-                  <span className="font-medium text-gray-800">8/12</span>
+                  <span className="text-gray-400">Assessments Passed</span>
+                  <span className="font-medium text-gray-200">8/12</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Time Spent</span>
-                  <span className="font-medium text-gray-800">4h 32m</span>
+                  <span className="text-gray-400">Time Invested</span>
+                  <span className="font-medium text-gray-200">4h 32m</span>
                 </div>
               </div>
             </div>
 
             {/* Related Videos */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-              <h2 className="text-lg font-bold text-gray-800 mb-4">Related Videos</h2>
+            <div className="card-dark p-6">
+              <h2 className="text-lg font-bold text-gray-100 mb-4">Recommended Content</h2>
               
               <div className="space-y-4">
                 {relatedVideos.map((video, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+                    className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors cursor-pointer border border-gray-700/50"
                     whileHover={{ x: 5 }}
                   >
-                    <div className="w-16 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl">
+                    <div className="w-16 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl">
                       {video.thumbnail}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-medium text-gray-800 text-sm line-clamp-2">{video.title}</h3>
-                      <div className="flex items-center space-x-2 text-xs text-gray-600 mt-1">
+                      <h3 className="font-medium text-gray-100 text-sm line-clamp-2">{video.title}</h3>
+                      <div className="flex items-center space-x-2 text-xs text-gray-400 mt-1">
                         <span>{video.duration}</span>
                         <span>•</span>
                         <span>{video.views} views</span>

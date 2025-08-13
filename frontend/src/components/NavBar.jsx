@@ -28,17 +28,17 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 sticky top-0 z-50">
+    <nav className="bg-gray-900/95 backdrop-blur-md shadow-2xl border-b border-gray-800/50 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">L</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-indigo-500/50 transition-all duration-300">
+                <span className="text-white font-bold text-lg">E</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-purple-700 transition-all duration-200">
-                Learnify
+              <span className="text-xl font-bold gradient-text-primary group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
+                EduTech Nexus
               </span>
             </Link>
           </div>
@@ -49,24 +49,24 @@ export default function NavBar() {
               <>
                 <Link 
                   to="/courses" 
-                  className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                  className="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 relative group"
                 >
-                  Courses
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-200"></span>
+                  Learning Paths
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-200"></span>
                 </Link>
                 <Link 
                   to="/videos" 
-                  className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                  className="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 relative group"
                 >
-                  Videos
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-200"></span>
+                  Video Library
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-200"></span>
                 </Link>
                 <Link 
                   to="/quizzes" 
-                  className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                  className="text-gray-300 hover:text-indigo-400 font-medium transition-colors duration-200 relative group"
                 >
-                  Quizzes
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-200"></span>
+                  Knowledge Tests
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-200"></span>
                 </Link>
               </>
             )}
@@ -77,25 +77,25 @@ export default function NavBar() {
             {user.username ? (
               <>
                 <div className="flex items-center space-x-3">
-                  <div className="hidden sm:flex items-center space-x-2 px-3 py-2 bg-gray-50 rounded-lg">
-                    <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <div className="hidden sm:flex items-center space-x-2 px-3 py-2 bg-gray-800/80 rounded-lg border border-gray-700/50">
+                    <div className="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs font-medium">
                         {user.username.charAt(0).toUpperCase()}
                       </span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Welcome, {user.username}</span>
+                    <span className="text-sm font-medium text-gray-200">Welcome, {user.username}</span>
                   </div>
                   <Link 
                     to="/dashboard" 
-                    className="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 hover:bg-blue-50 rounded-lg"
+                    className="px-4 py-2 text-indigo-400 hover:text-indigo-300 font-medium transition-colors duration-200 hover:bg-gray-800/50 rounded-lg"
                   >
-                    Dashboard
+                    My Hub
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                    className="px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 hover:shadow-red-500/25"
                   >
-                    Logout
+                    Sign Out
                   </button>
                 </div>
               </>
@@ -103,15 +103,15 @@ export default function NavBar() {
               <>
                 <Link 
                   to="/login" 
-                  className="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200 hover:bg-gray-50 rounded-lg"
+                  className="px-4 py-2 text-gray-300 hover:text-gray-100 font-medium transition-colors duration-200 hover:bg-gray-800/50 rounded-lg"
                 >
-                  Login
+                  Sign In
                 </Link>
                 <Link 
                   to="/register" 
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-500 hover:to-purple-500 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 hover:shadow-indigo-500/25"
                 >
-                  Get Started
+                  Join Now
                 </Link>
               </>
             )}

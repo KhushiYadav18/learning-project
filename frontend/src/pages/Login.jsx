@@ -44,9 +44,9 @@ export default function Login() {
   };
 
   const fields = [
-    { name: "username", type: "text", placeholder: "Username", onChange: handleChange },
-    { name: "password", type: "password", placeholder: "Password", onChange: handleChange }
+    { name: "username", type: "text", placeholder: "Enter your username", onChange: handleChange },
+    { name: "password", type: "password", placeholder: "Enter your password", onChange: handleChange }
   ];
 
-  return <AuthForm title="Log In" fields={fields} onSubmit={handleSubmit} />;
+  return <AuthForm title="Welcome Back" fields={fields} onSubmit={handleSubmit} />;
 }

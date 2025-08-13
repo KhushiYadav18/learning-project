@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark theme base styles */
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  html {
+    @apply bg-gray-900;
+  }
+}
+
+/* Custom dark theme scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+}
+
